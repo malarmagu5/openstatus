@@ -7,6 +7,7 @@ const steps = [
     description:
       "Connect your websites and APIs in seconds. Set your check frequency and regions.",
     icon: Monitor,
+    badge: "+",
   },
   {
     number: 2,
@@ -93,6 +94,13 @@ export function HowItWorks() {
                 <div className="absolute -top-3 left-4 flex h-6 w-6 items-center justify-center bg-foreground text-xs font-semibold text-background">
                   {step.number}
                 </div>
+
+                {/* Optional badge (e.g., + symbol) */}
+                {"badge" in step && step.badge && (
+                  <div className="absolute -top-2 right-3 flex h-5 w-5 items-center justify-center bg-foreground text-xs font-bold text-background">
+                    {step.badge}
+                  </div>
+                )}
 
                 {/* Icon */}
                 <div className="mb-4 flex h-12 w-12 items-center justify-center border border-border bg-muted">
