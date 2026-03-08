@@ -9,7 +9,7 @@ const steps = [
       "Connect your websites and APIs in seconds. Set your check frequency and regions.",
     icon: Monitor,
     badge: "+",
-    badgeHref: "https://app.openstatus.dev/monitors/create",
+    badgeHref: "https://app.openstatus.dev",
   },
   {
     number: 2,
