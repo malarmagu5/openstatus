@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Bell, Globe, Monitor } from "lucide-react";
 
 const steps = [
@@ -8,6 +9,7 @@ const steps = [
       "Connect your websites and APIs in seconds. Set your check frequency and regions.",
     icon: Monitor,
     badge: "+",
+    badgeHref: "https://app.openstatus.dev/monitors/create",
   },
   {
     number: 2,
@@ -97,9 +99,19 @@ export function HowItWorks() {
 
                 {/* Optional badge (e.g., + symbol) */}
                 {"badge" in step && step.badge && (
-                  <div className="absolute -top-2 right-3 flex h-5 w-5 items-center justify-center bg-foreground text-xs font-bold text-background">
-                    {step.badge}
-                  </div>
+                  "badgeHref" in step && step.badgeHref ? (
+                    <Link
+                      href={step.badgeHref}
+                      className="absolute -top-2 right-3 flex h-5 w-5 items-center justify-center bg-foreground text-xs font-bold text-background transition-colors hover:bg-foreground/80"
+                      title="Add your monitors"
+                    >
+                      {step.badge}
+                    </Link>
+                  ) : (
+                    <div className="absolute -top-2 right-3 flex h-5 w-5 items-center justify-center bg-foreground text-xs font-bold text-background">
+                      {step.badge}
+                    </div>
+                  )
                 )}
 
                 {/* Icon */}
